@@ -1,64 +1,72 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import styles from "./hawaii.module.css";
+import { useCrystalProgress } from "./lib/useCrystalProgress";
+import { CrystalBar } from "./components/CrystalBar";
+
+export default function HomePage() {
+  const { fragments, resetFragments } = useCrystalProgress();
+
   return (
-    <div className={styles.page}>
+    <div className={styles.page} style={{
+              backgroundImage: "url('/birthday-bg.mp4')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}>
+
+            <video
+    className={styles.videoBackground}
+    src="/birthday-bg.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+      <CrystalBar fragments={fragments} />
+
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className={styles.welcomeSlide}>
+          <div
+            className={styles.hawaiianBackground}
+            // style={{
+            //   backgroundImage: "url('/birthday-bg.png')",
+            //   backgroundSize: "cover",
+            //   backgroundPosition: "center",
+            // }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className={styles.palmTrees}>🌴🌴</div>
+            <h1 className={styles.title}>З Днем народження!</h1>
+            {/* <h2 className={styles.subtitle}>Ліло, Стіч і друзі вже чекають!</h2> */}
+
+            <div className={styles.instructions}>
+              <p>Сьогодні ми вирушаємо в гавайську пригоду.</p>
+              {/* <p>
+                Допоможи зібрати всі пелюстки кристала Охани, проходячи веселi
+                станції-квестu.
+              </p>
+              <p>Натискай кнопку внизу, щоб почати свято!</p> */}
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <Link href="/stich" className={styles.startButton}>
+                Вперед до пригоди!
+              </Link>
+
+              <button
+                type="button"
+                onClick={resetFragments}
+                className={styles.startButton}
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8))",
+                  color: "#2C5F2D",
+                }}
+              >
+                Скинути прогрес кристала
+              </button>
+            </div>
+          </div>
         </div>
       </main>
     </div>
