@@ -45,7 +45,7 @@ export default function BeachPage() {
             backgroundPosition: "center",
           }}
         >
-          <h2>Гавайський Пляж.</h2>
+          <h2 style={{color:"red", border:"2px solid green", borderRadius: 16, padding: 16}}>Гавайський Пляж.</h2>
           <p>Час відпочинку, але пригода триває!</p>
 
           <button className={styles.startButton} onClick={handleNext}>

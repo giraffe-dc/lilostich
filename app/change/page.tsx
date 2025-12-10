@@ -109,10 +109,14 @@ export default function ChangePage() {
             backgroundImage: "url('/change-bg.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center", 
-            width: "100vw", height: "100vh"
+            width: "100vw", height: "100vh",
+            justifyContent: "center",
+            alignItems: "center",
+            // margin: "0 auto",
+
           }}
         >
-          <h2>Знайди нас...</h2>
+          <h2 style={{color:"red", border:"2px solid green", borderRadius: 16, padding: 16}}>Знайди нас...</h2>
 
           {!showMaze && (
             <>
@@ -131,7 +135,7 @@ export default function ChangePage() {
                           <img
                             src={card.value}
                             alt="Картка"
-                            style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 8 }}
+                            style={{ width: "70%", height: "100%", objectFit: "cover", borderRadius: 8 }}
                           />
                         ) : (
                           card.value

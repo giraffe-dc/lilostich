@@ -74,7 +74,7 @@ export default function CabibaraPage() {
             backgroundPosition: "center",
           }}
         >
-          <h2>Друзі Гаваїв — Капібара двіж</h2>
+          <h2 style={{color:"red", border:"2px solid green", borderRadius: 16, padding: 16}}>Друзі Гаваїв — Капібара двіж</h2>
 
           <div style={{
             background: "rgba(255,255,255,0.85)",

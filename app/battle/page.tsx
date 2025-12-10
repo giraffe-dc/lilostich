@@ -32,6 +32,9 @@ export default function BattlePage() {
   }, []);
 
   const handleAction = () => {
+    if (!fragments[1]) {
+      markCollected(1);
+    }
     setShowModal(true);
     setTimeout(() => {
      setShowModal(false);

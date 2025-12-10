@@ -38,12 +38,12 @@
   transform: translateX(-50%);
   display: flex;
   gap: 15px;
-  background: rgba(255, 255, 255, 0.9);
+  /* background: rgba(255, 255, 255, 0.9); */
   padding: 15px 25px;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   z-index: 100;
-  border: 3px solid var(--accent);
+  /* border: 3px solid var(--accent);і */
 }
 
 .fragment {
@@ -508,9 +508,8 @@
 }
 
 .memoryCard {
-  /* width: 60px; */
+  width: 60%;
   height: 90px;
-  /* height: 100%; */
   background: var(--accent);
   border-radius: 8px;
   display: flex;
@@ -520,6 +519,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid white;
+  margin: 0 auto;
 }
 
 .memoryCard:hover {

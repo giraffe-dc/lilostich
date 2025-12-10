@@ -67,7 +67,7 @@ export default function StichPage() {
             </div>
           )}
 
-          {showVideo && (
+          {showVideo && !showButton && (
             <div style={{  width: "100%" }}>
               <video
                 src="/stich-message.mp4"
@@ -78,9 +78,24 @@ export default function StichPage() {
           )}
 
           {showButton && (
+            <div
+              style={{
+                maxWidth: 400,
+                width: "100%",
+                padding: 16,
+                background: "rgba(255,255,255,0.8)",
+                borderRadius: 16,
+              }}
+            >
+              <img
+                src={'/cristal.png'}
+                alt="Смішний герой"
+                style={{ width: "100%", borderRadius: 12 }}
+              />
             <button className={styles.startButton} onClick={handleHelp}>
               На допомогу!
             </button>
+            </div>
           )}
         </div>
       </main>

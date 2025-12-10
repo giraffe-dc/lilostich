@@ -45,7 +45,7 @@ export default function CristmasPage() {
             backgroundPosition: "center",
           }}
         >
-          <h2>Різдво на Гаваях.</h2>
+          <h2 style={{color:"red", border:"2px solid green", borderRadius: 16, padding: 16}}>Різдво на Гаваях.</h2>
 
           <div style={{ width: "100%", marginBottom: 24 }}>
             <div

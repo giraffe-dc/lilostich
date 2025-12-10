@@ -36,11 +36,11 @@ export default function HomePage() {
             // }}
           >
             <div className={styles.palmTrees}>🌴🌴</div>
-            <h1 className={styles.title}>З Днем народження!</h1>
+            <h1 className={styles.title} style={{color:"red"}}>З Днем народження!</h1>
             {/* <h2 className={styles.subtitle}>Ліло, Стіч і друзі вже чекають!</h2> */}
 
             <div className={styles.instructions}>
-              <p>Сьогодні ми вирушаємо в гавайську пригоду.</p>
+              <p>Гавайська пригода.</p>
               {/* <p>
                 Допоможи зібрати всі пелюстки кристала Охани, проходячи веселi
                 станції-квестu.
@@ -58,8 +58,7 @@ export default function HomePage() {
                 onClick={resetFragments}
                 className={styles.startButton}
                 style={{
-                  background:
-                    "linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8))",
+                  background:"none",
                   color: "#2C5F2D",
                 }}
               >
