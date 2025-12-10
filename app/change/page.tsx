@@ -12,7 +12,7 @@ interface MemoryCard {
   matched: boolean;
 }
 
-const BASE_VALUES = ["🌺", "🌴", "🌊", "🌈", "🧸", "🦈", "🏠", "🎁", "🥥", "🍍"]; // 10 пар = 20 карт для сітки 5x4
+const BASE_VALUES = ["/smile-1.jpg", "🌴", "🌊", "🌈", "🧸", "🦈", "🏠", "🎁", "🥥", "🍍"]; // 10 пар = 20 карт для сітки 5x4
 
 function createDeck(): MemoryCard[] {
   const doubled = [...BASE_VALUES, ...BASE_VALUES];
@@ -126,7 +126,19 @@ export default function ChangePage() {
                       className={styles.memoryCard}
                       onClick={() => handleCardClick(card)}
                     >
-                      {isOpen ? card.value : "?"}
+                      {isOpen ? (
+                        typeof card.value === "string" && card.value.startsWith("/") ? (
+                          <img
+                            src={card.value}
+                            alt="Картка"
+                            style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 8 }}
+                          />
+                        ) : (
+                          card.value
+                        )
+                      ) : (
+                        "?"
+                      )}
                     </div>
                   );
                 })}
