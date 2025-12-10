@@ -14,6 +14,7 @@ export default function HomePage() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}>
+            <audio autoPlay loop controls src="/main.mp3" style={{position: "fixed", bottom: 10, zIndex: 100}}></audio>
 
             <video
     className={styles.videoBackground}
@@ -40,7 +41,7 @@ export default function HomePage() {
             {/* <h2 className={styles.subtitle}>Ліло, Стіч і друзі вже чекають!</h2> */}
 
             <div className={styles.instructions}>
-              <p>Гавайська пригода.</p>
+              <p style={{fontSize: 50, color:'blue', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Гавайська пригода.</p>
               {/* <p>
                 Допоможи зібрати всі пелюстки кристала Охани, проходячи веселi
                 станції-квестu.

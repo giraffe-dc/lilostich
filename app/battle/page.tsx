@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../hawaii.module.css";
 import { useCrystalProgress } from "../lib/useCrystalProgress";
@@ -20,6 +20,7 @@ export default function BattlePage() {
   const [currentSignal, setCurrentSignal] = useState<SignalColor | null>(null);
   const [score, setScore] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const bgAudioRef = useRef<HTMLAudioElement | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -32,6 +33,10 @@ export default function BattlePage() {
   }, []);
 
   const handleAction = () => {
+    if (bgAudioRef.current) {
+      bgAudioRef.current.pause();
+      bgAudioRef.current.currentTime = 0;
+    }
     if (!fragments[1]) {
       markCollected(1);
     }
@@ -69,10 +74,9 @@ export default function BattlePage() {
       <CrystalBar fragments={fragments} />
       <main className={styles.main}>
       <audio
+            ref={bgAudioRef}
             src="/battle-fon.mp3"
-            autoPlay            
-            // loop
-            // style={{ display: "none" }}
+            autoPlay
           />
         <div
           className={styles.slide}
@@ -106,7 +110,7 @@ export default function BattlePage() {
             style={{
               position: "fixed",
               inset: 0,
-              background: "rgba(0,0,0,0.7)",
+              // background: "rgba(0,0,0,0.7)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -115,7 +119,7 @@ export default function BattlePage() {
           >
             <div
               style={{
-                background: "white",
+                // background: "white",
                 padding: 20,
                 borderRadius: 16,
                 // maxWidth: 640,

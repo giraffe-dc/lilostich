@@ -11,8 +11,8 @@ interface MemoryCard {
   value: string;
   matched: boolean;
 }
-
-const BASE_VALUES = ["/smile-1.jpg", "🌴", "🌊", "🌈", "🧸", "🦈", "🏠", "🎁", "🥥", "🍍"]; // 10 пар = 20 карт для сітки 5x4
+const BASE_VALUES = ["/memo1.png", "/memo2.png", "/memo3.png", "/memo4.png", "/memo5.png", "/memo6.png", "/memo7.png", "/memo8.png", "/memo9.png", "/memo10.png", ];
+// const BASE_VALUES = ["/memo1.png", "🌴", "🌊", "🌈", "🧸", "🦈", "🏠", "🎁", "🥥", "🍍"]; // 10 пар = 20 карт для сітки 5x4
 
 function createDeck(): MemoryCard[] {
   const doubled = [...BASE_VALUES, ...BASE_VALUES];

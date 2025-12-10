@@ -71,7 +71,7 @@ export default function SmilePage() {
           //   backgroundPosition: "center",
           // }}
         >
-          <h2 style={{color:"red", border:"2px solid green", borderRadius: 16, padding: 16}}>Комічний Ліс — Місія Хохотун</h2>
+          {/* <h2 style={{color:"red", border:"2px solid green", borderRadius: 16, padding: 16}}>Комічний Ліс — Місія Хохотун</h2> */}
           {/* <p>Натискай кнопку і дивись, який кумедний герой з'явиться!</p> */}
 
           <div style={{ margin: "20px 0" }}>
